@@ -5,16 +5,12 @@ async function fetchUsers() {
   const data = await response.json();
   return data.data;
 }
-
+{
+  /*    <div>{JSON.stringify(users)}</div> Para verlo desde el front*/
+}
 async function IndexPage() {
   const users = await fetchUsers();
-  return (
-    <div>
-      <h1>IndexPage</h1>
-      {/*    <div>{JSON.stringify(users)}</div> */}
-      <Users users={users} />
-    </div>
-  );
+  return <Users users={users} />;
 }
 
 export default IndexPage;
